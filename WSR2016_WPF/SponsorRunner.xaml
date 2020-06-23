@@ -1,0 +1,139 @@
+﻿<Window x:Class="WSR2016_WPF.SponsorRunner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="SponsorRunner" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ControlTemplate x:Key="ButtonInf1" TargetType="{x:Type Button}">
+            <Border CornerRadius="10" x:Name="border">
+                <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="false">
+                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="false">
+                    <Setter Property="Background" Value="{StaticResource Button.MouseOver.Background}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="false">
+                    <Setter Property="Background" Value="{StaticResource Button.Pressed.Background}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" Value="{StaticResource Button.Disabled.Background}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}"/>
+                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+            </StackPanel>
+        </Border>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="2">
+            <Label Content="dmckdmck" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="White"/>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="251*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0">
+                <Label Content="Спонсор Бегуна" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <Label Content="Пожалуйста выбирите бегуна, которого вы хотели бы спонстровать и сумму," HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0"/>
+                <Label Content="которую вы хотели бы спонсировать, Спасибо за вашу поддержку бегунов и их" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0"/>
+                <Label Content="благотворительных учереждений" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0"/>
+            </StackPanel>
+            <Grid Grid.Row="1" Margin="0,1.4,-0.4,-0.2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Информация о Спонсоре" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" FontWeight="Bold"/>
+                    <Label Content="Ваше имя" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    <Label Content="Бегун" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    <Label Content="Карта" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    <Label Content="Номер карты#" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    <Label Content="Срок действия" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    <Label Content="CVC" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    <TextBox x:Name="SponName" MaxLength="20" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="13"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="13" x:Name="RunnerList" SelectionChanged="RunnerList_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding FirstName}" Margin="0,0,5,0"/>
+                                    <TextBlock Text="{Binding LastName}" Margin="0,0,5,0"/>
+                                    <TextBlock x:Name="EmailTxt" Text="{Binding BibNumber}" Margin="0,0,5,0"/>
+                                    <TextBlock Text="{Binding CountryCode}"/>
+                                    <TextBlock Text="{Binding RegistrationId}" Visibility="Hidden" FontSize="0.1"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBox MaxLength="10" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="13"/>
+                    <TextBox x:Name="Number" MaxLength="16" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="13"/>
+                    <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                        <TextBox x:Name="Month" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Width="30" FontSize="13" Margin="0,0,10,0"/>
+                        <TextBox x:Name="Year" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Width="50" FontSize="13"/>
+                    </StackPanel>
+                    <TextBox x:Name="CVC" MaxLength="3" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Width="50" FontSize="13"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.7*"/>
+                        <RowDefinition Height="0.15*"/>
+                        <RowDefinition Height="0.3*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <Label Content="Благотворительность" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
+                            <TextBlock x:Name="InfAboutFond" Text="Фонд Кошек" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                            <Border BorderBrush="Orange" BorderThickness="3" CornerRadius="100" Margin="10,5,0,5">
+                                <Button Margin="5,5,5,5" Content="i" Foreground="Orange" Width="15.5" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="-10" Background="White" BorderBrush="White" x:Name="ButtonInf" Template="{DynamicResource ButtonInf1}" Click="ButtonInf_Click"/>
+                            </Border>
+                        </StackPanel>
+                        <Label Content="Сумма пожертвования" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" FontWeight="Bold"/>
+                        <Label Content="50$" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" Foreground="Gray" x:Name="LabelDonat"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button Content="-" Margin="137,3,5,3" Padding="10,0,10,0" Click="Minus"/>
+                        <TextBox x:Name="SummaDonation" Text="50" Margin="0,0,5,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="50" TextChanged="Prirav"/>
+                        <Button Content="+" Margin="0,3,5,3" Padding="10,0,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Plus"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Button Content="Заплатить" Margin="120,5,10,5" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="Button_Click"/>
+                        <Button Content="Отмена" Margin="10,5,10,5" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="Exit"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="WSR2016_WPF.LavelActive"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="ToolWindow"
+        Title="LavelActive" Height="360" Width="500">
+    <Grid>
+        <StackPanel>
+            <Label Content="Уровни активности" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="DimGray" Margin="20,0,0,0"/>
+            <Label Content="Это описание всех уровней активности" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Margin="20,0,0,0"/>
+            <ListBox x:Name="list" FontSize="15" Margin="20,0,0,0" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content=" &#8226;  Сидячий: " FontWeight="Bold" Margin="0,0,130,0"/>
+                    <TextBlock VerticalAlignment="Center" Width="200" Text="Нет работы или работа за столом" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content=" &#8226;  Маленькая активность:" FontWeight="Bold" Margin="0,0,30,0"/>
+                    <TextBlock VerticalAlignment="Center" Width="200" Text="Мало физических работы или занятия спортом 1-3 раза в неделю" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content=" &#8226;  Средняя активность: " FontWeight="Bold" Margin="0,0,46,0"/>
+                    <TextBlock Text="описание..."  VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content=" &#8226;  Сильная активность: " FontWeight="Bold" Margin="0,0,46,0"/>
+                    <TextBlock Text="описание..." VerticalAlignment="Center" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content=" &#8226;  Максимальная активность: " FontWeight="Bold"/>
+                    <TextBlock VerticalAlignment="Center" Width="200" Text="Сильная ежедневная физическая нагрузка или спорт и физическая работа" TextWrapping="Wrap"/>
+                </StackPanel>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,65 @@
+﻿<Window x:Class="WSR2016_WPF.OverviewSponsor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="OverviewSponsor" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <Button Content="Logout" Margin="300,5,30,5" Width="96" FontSize="15" Click="ExitOmMainWindow"/>
+            </StackPanel>
+        </Border>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="2">
+            <Label Content="dmckdmck" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="White"/>
+        </Border>
+        <StackPanel Grid.Row="1">
+            <Label Content="Просмотр спонсоров" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Отсортировать:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Margin="200,5,5,5"/>
+                <ComboBox x:Name="SortCombo" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Width="150" Margin="5,10,5,10">
+                    <ComboBoxItem>
+                        <TextBlock Text="Name"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="Summa"/>
+                    </ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="SortTable" Content="Сортировка" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Padding="15,0,15,0" Margin="5,7,5,7" Click="SortTable_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label Content="Благотворительные организации:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20" Margin="230,0,0,0"/>
+                <Label x:Name="CountOrg" Content="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label Content="Всего спонсорских взносов:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20" Margin="230,0,0,0"/>
+                <Label x:Name="SummLabel" Content="$94,450" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20"/>
+            </StackPanel>
+            <DataGrid x:Name="dgCharity" Height="193" Margin="50,0,50,0" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="1*" Header="Логотип">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Background="Orange" CornerRadius="100" Margin="0, 5" HorizontalAlignment="Center" Width="30" Height="30">
+                                    <Image x:Name="Image" Source="{Binding CharityLogo}"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="1*" FontSize="15"/>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Summa}" Width="1*" FontSize="15"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

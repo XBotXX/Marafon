@@ -1,0 +1,72 @@
+﻿<Window x:Class="WSR2016_WPF.EditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="EditUser" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <Button Content="Logout" Margin="300,5,30,5" Width="96" FontSize="15" Click="ExitOnMainWindow"/>
+            </StackPanel>
+        </Border>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="2">
+            <Label Content="dmckdmck" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="White"/>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Редактирование пользователя" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="Gray"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Email:" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Имя:" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Фамилия:" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Роль:" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <TextBox x:Name="FirstNameUser" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="10,10,0,10"/>
+                <TextBox x:Name="LastNameUser" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="10,10,0,10"/>
+                <ComboBox x:Name="RoleIdUser" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="10,10,0,10"/>
+                <TextBlock x:Name="EmailText" Grid.Row="0" Grid.Column="1" FontSize="15" Foreground="Gray" Margin="10,10,0,10" Text="Test" FontStyle="Italic" Padding="0,5,0,0"/>
+
+                <Label Grid.Row="2" Grid.Column="2" Content="Пароль:" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <Label Grid.Row="3" Grid.Column="2" Content="Повтор пароля:" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                <PasswordBox x:Name="PasswordUser" Grid.Row="2" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="10,10,5,10"/>
+                <PasswordBox x:Name="ReplayPasswordUser" Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="10,10,5,10"/>
+                <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Content="Оставьте эти поля, незаполнеными,&#10;если вы не хотите изменять пароль." HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="0,0,15,0" FontStyle="Italic"/>
+                <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Смена пароля" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="17" Margin="90,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SaveNewData" Grid.Row="0" Grid.Column="0" Content="Сохранить" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Padding="15,5,15,5" Margin="0,0,10,0" Click="SaveNewData_Click"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Padding="15,5,15,5" Margin="10,0,0,0" Click="Exit"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

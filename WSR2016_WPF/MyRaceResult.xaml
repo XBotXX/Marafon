@@ -1,0 +1,47 @@
+﻿<Window x:Class="WSR2016_WPF.MyRaceResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MyRaceResult" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <Button Content="Logout" Margin="300,5,30,5" Width="96" FontSize="15" Click="ExitOnMainWindow"/>
+            </StackPanel>
+        </Border>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="2">
+            <Label Content="dmckdmck" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="White"/>
+        </Border>
+        <StackPanel Grid.Row="1">
+            <Label Content="Мои результаты" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20"/>
+            <Label Content="   Это - список всех ваших прошлых результатов гонки для Marathon Skills,&#10;                             Общее место сравнивает всех бегунов.&#10;Место по категории compares runners in the same gender and age categories" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Пол:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold" Margin="230,0,0,0"/>
+                <Label Content="мужской" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+                <Label Content="Возрастная категория:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                <Label Content="18-29" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+            </StackPanel>
+            <DataGrid x:Name="ResultationRunner" Height="140" Margin="0,10,0,10" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Марафон" Binding="{Binding MarafonName}" FontSize="15" Width="1*"/>
+                    <DataGridTextColumn Header="Дистанция" Binding="{Binding Distance}" FontSize="15" Width="1*"/>
+                    <DataGridTextColumn Header="Время" Binding="{Binding TimeRun}" FontSize="15" Width="1*"/>
+                    <DataGridTextColumn Header="Общее место" Binding="{Binding Mestoall}" FontSize="15" Width="1*"/>
+                    <DataGridTextColumn Header="Место по категории" Binding="{Binding MestoCategory}" FontSize="15" Width="1*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Показать все результаты" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="15,5,15,5" Margin="5" Click="AllRunner"/>
+        </StackPanel>
+    </Grid>
+</Window>

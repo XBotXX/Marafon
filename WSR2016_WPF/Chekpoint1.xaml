@@ -1,0 +1,23 @@
+﻿<Window x:Class="WSR2016_WPF.Chekpoint1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterOwner"
+        Title="Chekpoint1" Height="260" Width="200">
+    <Grid>
+        <StackPanel>
+            <Label Content="Checkpoint 1" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Gray" Margin="20,0,0,0"/>
+            <Label Content="Особенности:" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Margin="20,0,0,0"/>
+            <ListBox x:Name="list" FontSize="15" Margin="20,0,0,0" BorderThickness="0">
+                <ListBoxItem Content=" -  Стенд для питья"/>
+                <ListBoxItem Content=" -  Энергитические&#10;    батончики"/>
+                <ListBoxItem Content=" -  Туалет"/>
+                <ListBoxItem Content=" -  Медицинский&#10;    пункт"/>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

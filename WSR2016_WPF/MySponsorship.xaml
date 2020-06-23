@@ -1,0 +1,102 @@
+﻿<Window x:Class="WSR2016_WPF.MySponsorship"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MySponsorship" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <Button Content="Logout" Margin="300,5,30,5" Width="96" FontSize="15" Click="ExitOnMainWindow"/>
+            </StackPanel>
+        </Border>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="2">
+            <Label Content="dmckdmck" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="White"/>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="78*"/>
+                <RowDefinition Height="271*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0">
+                <Label Content="Мои результаты" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" FontSize="20" Margin="0,5,0,0"/>
+                <Label Content="Здесь показаны все ваши спонсоры в Marathon Skills 2016." HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" FontSize="15" Margin="0,10,0,0"/>
+            </StackPanel>
+            <Grid Grid.Row="1" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <Label x:Name="TitleCharity" Content="              Наименование&#10;Благотворительной организации" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray"/>
+                    <Border CornerRadius="100" BorderThickness="1" BorderBrush="Black" Width="100" Height="100">
+                        <Image/>
+                    </Border>
+                    <ScrollViewer MaxHeight="120">
+                        <TextBlock x:Name="DescriptionCharity" TextWrapping="Wrap" Text="Это было бы длинным описание&#10;благотворительности.Это могло пойти&#10;для нескольких параграфов." HorizontalAlignment="Center" Padding="0" FontSize="15" Margin="10,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    </ScrollViewer>
+                    </StackPanel>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.35*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="0.9*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <Label Content="Спонсор" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Label Content="Взнос" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <ListBox x:Name="SponsorList" Foreground="White" SelectionChanged="SponsorList_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="50,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="170"/>
+                                            <ColumnDefinition Width="150"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Content="{Binding SponsorName}" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+
+                                        <Label Content="{Binding Amount}" Margin="40,0,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="Gray"/>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                    <Line Stroke="Gray" StrokeThickness="4" X1="95" Y1="5" X2="390" Y2="5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,3,0,0"/>
+                    <Label x:Name="SummCharity" Content="Всего $680" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="Gray" Margin="0,2,0,0"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

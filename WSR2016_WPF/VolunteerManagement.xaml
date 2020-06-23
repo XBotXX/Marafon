@@ -1,0 +1,74 @@
+﻿<Window x:Class="WSR2016_WPF.VolunteerManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="VolunteerManagement" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <Button Content="Logout" Margin="300,5,30,5" Width="96" FontSize="15" Click="ExitOnMainWindow"/>
+            </StackPanel>
+        </Border>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="2">
+            <Label Content="dmckdmck" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Foreground="White"/>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Управление волонтерами" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="Gray" Margin="0" Grid.ColumnSpan="3"/>
+                <Label Content="Сортировка и фильтрация" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="Gray" Grid.Row="1"/>
+                <Label Content="Загрузка" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="Gray" Grid.Row="1" Grid.Column="2"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Label Content="Сортировать по:" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Margin="10,0,5,0"/>
+                    <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="Gray" Width="200" x:Name="SortVolanteers" SelectionChanged="SortVolanteers_SelectionChanged" ItemsSource="{Binding}">
+                        
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                </StackPanel>
+                <Button Content="Обновить" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Grid.Row="3" Grid.Column="0" Padding="15,5,15,5" Margin="60,10,0,0" Grid.RowSpan="2" x:Name="FiltrVolanteers" Click="FiltrVolanteers_Click"/>
+                <Button Content="Загрузка волонтеров" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Grid.Row="2" Grid.Column="2" Padding="15,0,15,0" Click="GotoImportVolunteers"/>
+                <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                    <Label Content="Всего волонтеров:" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                    <Label x:Name="CountVolunteers" Content="123" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <DataGrid x:Name="dgUsers" AutoGenerateColumns="False" CanUserAddRows="False" Grid.Row="1" Margin="50,0,50,0" Height="173" FontSize="15">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="FirstName" Width="1*" Binding="{Binding FirstName}" FontSize="15"/>
+                        <DataGridTextColumn Header="LastName" Width="1*" Binding="{Binding LastName}" FontSize="15"/>
+                        <DataGridTextColumn Header="CountryCode" Width="1*" Binding="{Binding CountryCode}" FontSize="15"/>
+                        <DataGridTextColumn Header="Gender" Width="1*" Binding="{Binding Gender}" FontSize="15"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

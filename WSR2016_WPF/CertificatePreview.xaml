@@ -1,0 +1,44 @@
+﻿<Window x:Class="WSR2016_WPF.CertificatePreview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2016_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="CertificatePreview" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="173*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Назад" Margin="5,5,30,5" Width="96" FontSize="15" Click="Exit"/>
+                <Label Content="MARATHON SKILLS 2016" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <Button Content="Logout" Margin="300,5,30,5" Width="96" FontSize="15" Click="ExitOnMainWindows"/>
+            </StackPanel>
+        </Border>
+        <Border Background="LightGray" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="795" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Race event:" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Margin="250,0,10,0"/>
+                <ComboBox x:Name="ComboRaceEvent" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Width="180" Margin="0,2,0,2"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+            <Border BorderBrush="Black" BorderThickness="1" Background="Orange" Height="80" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <Image/>
+            </Border>
+            <Label Content="Поздравляем Имя Фамилия с участием в 42km полном марафоне. Ваши&#10;                     результаты время 4:13:45 и занятое место 183!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+            <Label Content="Сертификат участника" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Foreground="DimGray" Margin="0,0,0,-5"/>
+            <Label Content="в" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+            <Label Content="Marathon Skills 2014" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Foreground="DimGray" Margin="0,-5,0,0"/>
+            <Label Content="Osaka, Japan" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="DimGray"/>
+            <Label Content="               Вы также заработали $1300&#10;для вашей благотворительной организации!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"/>
+        </StackPanel>
+        <Border Grid.Row="2" Background="LightGreen" Height="100" Width="100" CornerRadius="100" Margin="676.9,231.3,0,0">
+            
+        </Border>
+    </Grid>
+</Window>
